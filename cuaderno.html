@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <title>Agregar Alumnos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilos.css">
+    </head>
+    <body>
+        <div ng-controller="AlumnosController">
+            <h1>Agregar alumnos a la agenda</h1>
+            <div class="wrapper">
+                <div class="contact-item" ng-repeat="alumno in alumnos | orderBy: 'nombre'">
+                    <div class="nombre">Alumno: {{alumno.nombre}} Telefono: {{alumno.telefono}} </div>
+                    <span class="curso">Curso: {{alumno.curso}}</span>
+                </div>
+            </div>
+            <div class="wrapper">
+                <h2>Añadir un nuevo contacto</h2>
+                Nombre: <input type="text" ng-model="nuevoAlumno.nombre"><br>
+                telefono: <input type="text" ng-model="nuevoAlumno.telefono"><br>
+                Curso: <input type="text" ng-model="nuevoAlumno.curso"><br>
+                <button ng-click="Save()">Guardar</button>
+            </div>
+        </div>
+        <script type="text/javascript" src="angular.min.js" ></script>
+        <script type="text/javascript" src="alumnos.js"></script>
+    </body>
+</html>
